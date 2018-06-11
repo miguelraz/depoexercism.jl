@@ -13,7 +13,7 @@ end
 
 function decode(s)
     function expand(count_str, char)
-        count = (count_str == "") ? 1 : parse(Int, count_str)
+        count = (count_str == "") ? 1 : Meta.parse(Int, count_str)
         return char ^ count
     end
 

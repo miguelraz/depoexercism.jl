@@ -5,7 +5,7 @@ include("robot-name.jl")
 # Random names means a risk of collisions.
 history = []
 
-isname(x) = ismatch(r"^[A-Z]{2}[0-9]{3}$", x)
+isname(x) = occursin(x, r"^[A-Z]{2}[0-9]{3}$")
 
 @testset "one robot" begin
     r1 = Robot()
