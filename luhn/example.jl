@@ -5,7 +5,7 @@ function luhn(id::AbstractString)
 
     numbers = Int[]
     for val in id
-        push!(numbers, parse(Int, val))
+        push!(numbers, Meta.parse(Int, val))
     end
 
     for i in length(numbers) - 1:-2:1

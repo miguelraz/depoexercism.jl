@@ -22,7 +22,7 @@ function verify(s::AbstractString)
 
     all(c -> all(isdigit, c), chars) || return false
 
-    sum(parse(Int, c) * i for (c, i) in zip(chars, 10:-1:1)) % 11 == 0
+    sum(Meta.parse(Int, c) * i for (c, i) in zip(chars, 10:-1:1)) % 11 == 0
 end
 
 Base.isvalid(::Type{ISBN}, s::AbstractString) = verify(s)
